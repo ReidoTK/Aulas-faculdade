@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class primeirojava {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar ao usuário o valor de n
+        System.out.println("Digite o valor de n para gerar a série de Fibonacci até o n-ésimo termo: ");
+        int n = scanner.nextInt();
+
+        // Exibir a série de Fibonacci até o n-ésimo termo
+        System.out.println("Série de Fibonacci até o " + n + "º termo:");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(calcularFibonacci(i) + " ");
+        }
+
+        scanner.close();
+    }
+
+    // Método para calcular o n-ésimo termo da série de Fibonacci usando recursão
+    public static int calcularFibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return calcularFibonacci(n - 1) + calcularFibonacci(n - 2);
+        }
+    }
+}
