@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class primeirojava {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o número base: ");
+        int base = scanner.nextInt();
+
+        System.out.println("Digite o número expoente: ");
+        int expoente = scanner.nextInt();
+
+        if (expoente < 0) {
+            System.out.println("O expoente deve ser um número positivo para este programa.");
+            return;
+        }
+
+        long resultado = calcularPotencia(base, expoente);
+
+        System.out.println(base + " elevado a " + expoente + " é igual a: " + resultado);
+
+        scanner.close();
+    }
+
+    public static long calcularPotencia(int base, int expoente) {
+        long resultado = 1;
+        for (int i = 0; i < expoente; i++) {
+            resultado *= base;
+        }
+        return resultado;
+    }
+}
