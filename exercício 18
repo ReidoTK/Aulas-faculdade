@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class primeirojava {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o número de elementos no conjunto: ");
+        int n = scanner.nextInt();
+
+        int menorValor = Integer.MAX_VALUE;
+        int maiorValor = Integer.MIN_VALUE;
+        int soma = 0;
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Digite o " + (i + 1) + "º número: ");
+            int numero = scanner.nextInt();
+
+            menorValor = Math.min(menorValor, numero);
+            maiorValor = Math.max(maiorValor, numero);
+            soma += numero;
+        }
+
+        System.out.println("Menor valor: " + menorValor);
+        System.out.println("Maior valor: " + maiorValor);
+        System.out.println("Soma dos valores: " + soma);
+
+        scanner.close();
+    }
+}
