@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class primeirojava {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int limite = 16;
+
+        while (true) {
+
+            int numero;
+            do {
+                System.out.println("Digite um número inteiro positivo menor que 16 para calcular o fatorial (ou -1 para sair): ");
+                numero = scanner.nextInt();
+
+                if (numero == -1) {
+                    break;
+                }
+            } while (numero < 0 || numero >= limite);
+
+            if (numero == -1) {
+                break;
+            }
+
+            long fatorial = calcularFatorial(numero);
+
+            System.out.println(numero + "! = " + fatorial);
+        }
+
+        scanner.close();
+    }
+
+    public static long calcularFatorial(int numero) {
+        if (numero == 0) {
+            return 1;
+        }
+
+        long fatorial = 1;
+        for (int i = 1; i <= numero; i++) {
+            fatorial *= i;
+        }
+        return fatorial;
+    }
+}
