@@ -1,0 +1,13 @@
+```java
+public class Main {
+    public static void main(String[] args) {
+        double precoUnitario = 1.99;
+
+        System.out.println("Número de Itens - Valor da Conta");
+        for (int numeroItens = 1; numeroItens <= 50; numeroItens++) {
+            double valorConta = numeroItens * precoUnitario;
+            System.out.printf("%d - R$ %.2f%n", numeroItens, valorConta);
+        }
+    }
+}
+```
