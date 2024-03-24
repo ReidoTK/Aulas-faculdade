@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o preço do pão: ");
+        double precoPao = scanner.nextDouble();
+
+        System.out.println("Quantidade de Pães - Valor Total");
+        for (int quantidade = 1; quantidade <= 50; quantidade++) {
+            double valorTotal = quantidade * precoPao;
+            System.out.printf("%d - R$ %.2f%n", quantidade, valorTotal);
+        }
+
+        scanner.close();
+    }
+}
