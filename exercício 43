@@ -1,0 +1,67 @@
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double totalGeral = 0;
+
+        System.out.println("Cardápio:");
+        System.out.println("Especificação     Código   Preço");
+        System.out.println("Cachorro Quente   100      R$ 1,20");
+        System.out.println("Bauru Simples     101      R$ 1,30");
+        System.out.println("Bauru com ovo     102      R$ 1,50");
+        System.out.println("Hambúrguer        103      R$ 1,20");
+        System.out.println("Cheeseburguer     104      R$ 1,30");
+        System.out.println("Refrigerante      105      R$ 1,00");
+        System.out.println("Digite o código do item desejado ou 0 para encerrar o pedido: ");
+
+        while (true) {
+            int codigo = scanner.nextInt();
+            if (codigo == 0) {
+                break;
+            }
+
+            System.out.println("Digite a quantidade desejada: ");
+            int quantidade = scanner.nextInt();
+
+            double preco = 0;
+
+            switch (codigo) {
+                case 100:
+                    preco = 1.20;
+                    break;
+                case 101:
+                    preco = 1.30;
+                    break;
+                case 102:
+                    preco = 1.50;
+                    break;
+                case 103:
+                    preco = 1.20;
+                    break;
+                case 104:
+                    preco = 1.30;
+                    break;
+                case 105:
+                    preco = 1.00;
+                    break;
+                default:
+                    System.out.println("Código inválido!");
+                    continue;
+            }
+
+            double totalItem = preco * quantidade;
+            totalGeral += totalItem;
+
+            System.out.printf("Valor a ser pago pelo item: R$ %.2f%n", totalItem);
+            System.out.println("Digite o código do próximo item ou 0 para encerrar o pedido: ");
+        }
+
+        System.out.printf("Total geral do pedido: R$ %.2f%n", totalGeral);
+
+        scanner.close();
+    }
+}
+```
