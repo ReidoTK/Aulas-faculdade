@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o número total de eleitores: ");
+        int totalEleitores = scanner.nextInt();
+
+        int votosCandidato1 = 0;
+        int votosCandidato2 = 0;
+        int votosCandidato3 = 0;
+
+        for (int i = 1; i <= totalEleitores; i++) {
+            System.out.println("Eleitor " + i + ", vote no candidato (1, 2 ou 3): ");
+            int voto = scanner.nextInt();
+
+            switch (voto) {
+                case 1:
+                    votosCandidato1++;
+                    break;
+                case 2:
+                    votosCandidato2++;
+                    break;
+                case 3:
+                    votosCandidato3++;
+                    break;
+                default:
+                    System.out.println("Voto inválido. Por favor, vote novamente.");
+                    i--; // Reduz o contador para permitir que o eleitor vote novamente
+                    break;
+            }
+        }
+
+        System.out.println("Número de votos de cada candidato:");
+        System.out.println("Candidato 1: " + votosCandidato1);
+        System.out.println("Candidato 2: " + votosCandidato2);
+        System.out.println("Candidato 3: " + votosCandidato3);
+
+        scanner.close();
+    }
+}
