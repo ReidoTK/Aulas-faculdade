@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o número de pessoas: ");
+        int n = scanner.nextInt();
+
+        int somaIdades = 0;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.println("Digite a idade da pessoa " + i + ": ");
+            int idade = scanner.nextInt();
+            somaIdades += idade;
+        }
+
+        double mediaIdades = (double) somaIdades / n;
+
+        if (mediaIdades >= 0 && mediaIdades <= 25) {
+            System.out.println("A média de idade da turma é " + mediaIdades + ", portanto a turma é jovem.");
+        } else if (mediaIdades >= 26 && mediaIdades <= 60) {
+            System.out.println("A média de idade da turma é " + mediaIdades + ", portanto a turma é adulta.");
+        } else {
+            System.out.println("A média de idade da turma é " + mediaIdades + ", portanto a turma é idosa.");
+        }
+
+        scanner.close();
+    }
+}
