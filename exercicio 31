@@ -1,0 +1,32 @@
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double totalCompra = 0;
+
+        while (true) {
+            System.out.println("Digite o preço do produto (ou 0 para finalizar a compra): ");
+            double precoProduto = scanner.nextDouble();
+
+            if (precoProduto == 0) {
+                break;
+            }
+
+            totalCompra += precoProduto;
+        }
+
+        System.out.printf("Total da compra: R$ %.2f%n", totalCompra);
+
+        System.out.println("Digite o valor em dinheiro fornecido pelo cliente: ");
+        double valorDinheiro = scanner.nextDouble();
+
+        double troco = valorDinheiro - totalCompra;
+        System.out.printf("Troco: R$ %.2f%n", troco);
+
+        scanner.close();
+    }
+}
+```
