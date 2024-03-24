@@ -1,0 +1,35 @@
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int alunoMaisAlto = 0, alunoMaisBaixo = 0;
+        int alturaMaisAlto = Integer.MIN_VALUE, alturaMaisBaixo = Integer.MAX_VALUE;
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Digite o número do aluno " + i + ": ");
+            int numeroAluno = scanner.nextInt();
+
+            System.out.println("Digite a altura do aluno " + i + " em centímetros: ");
+            int alturaAluno = scanner.nextInt();
+
+            if (alturaAluno > alturaMaisAlto) {
+                alturaMaisAlto = alturaAluno;
+                alunoMaisAlto = numeroAluno;
+            }
+
+            if (alturaAluno < alturaMaisBaixo) {
+                alturaMaisBaixo = alturaAluno;
+                alunoMaisBaixo = numeroAluno;
+            }
+        }
+
+        System.out.println("Aluno mais alto: Número " + alunoMaisAlto + ", Altura: " + alturaMaisAlto + " cm");
+        System.out.println("Aluno mais baixo: Número " + alunoMaisBaixo + ", Altura: " + alturaMaisBaixo + " cm");
+
+        scanner.close();
+    }
+}
+```
