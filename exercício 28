@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite a quantidade de CDs: ");
+        int quantidadeCDs = scanner.nextInt();
+
+        double totalInvestido = 0;
+
+        for (int i = 1; i <= quantidadeCDs; i++) {
+            System.out.println("Digite o valor do CD " + i + ": ");
+            double valorCD = scanner.nextDouble();
+            totalInvestido += valorCD;
+        }
+
+        double valorMedioPorCD = totalInvestido / quantidadeCDs;
+
+        System.out.println("O valor total investido em CDs é: " + totalInvestido);
+        System.out.println("O valor médio gasto em cada CD é: " + valorMedioPorCD);
+
+        scanner.close();
+    }
+}
