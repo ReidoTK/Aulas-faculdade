@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        ArrayList<String> atletas = new ArrayList<>();
+
+        while (true) {
+            System.out.println("Digite o nome do atleta (ou 'fim' para encerrar): ");
+            String nome = scanner.nextLine();
+
+            if (nome.equals("fim")) {
+                break;
+            }
+
+            ArrayList<Double> saltos = new ArrayList<>();
+
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Digite a distância do salto " + i + ": ");
+                double distancia = scanner.nextDouble();
+                saltos.add(distancia);
+            }
+
+            scanner.nextLine(); // Limpar o buffer do scanner
+
+            double melhorSalto = Double.MIN_VALUE;
+            double piorSalto = Double.MAX_VALUE;
+            double somaSaltos = 0;
+
+            for (double salto : saltos) {
+                somaSaltos += salto;
+
+                if (salto > melhorSalto) {
+                    melhorSalto = salto;
+                }
+
+                if (salto < piorSalto) {
+                    piorSalto = salto;
+                }
+            }
+
+            double mediaSaltos = (somaSaltos - melhorSalto - piorSalto) / 3;
+
+            System.out.println("Resultado para o atleta " + nome + ": " + mediaSaltos);
+        }
+
+        scanner.close();
+    }
+}
