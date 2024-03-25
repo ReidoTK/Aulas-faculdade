@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Definindo o gabarito da prova
+        String[] gabarito = {"A", "B", "C", "D", "E", "E", "D", "C", "B", "A"};
+
+        int totalAlunos = 0;
+        int maiorAcerto = 0;
+        int menorAcerto = 10;
+        int totalAcertosTurma = 0;
+
+        char continuar = 's';
+        while (continuar == 's' || continuar == 'S') {
+            totalAlunos++;
+
+            int acertosAluno = 0;
+
+            System.out.println("Aluno " + totalAlunos);
+            for (int i = 0; i < gabarito.length; i++) {
+                System.out.println("Resposta para a questão " + (i + 1) + ": ");
+                String respostaAluno = scanner.nextLine();
+
+                if (respostaAluno.equalsIgnoreCase(gabarito[i])) {
+                    acertosAluno++;
+                }
+            }
+
+            if (acertosAluno > maiorAcerto) {
+                maiorAcerto = acertosAluno;
+            }
+
+            if (acertosAluno < menorAcerto) {
+                menorAcerto = acertosAluno;
+            }
+
+            totalAcertosTurma += acertosAluno;
+
+            System.out.println("Número de acertos: " + acertosAluno);
+            System.out.println("Deseja permitir que outro aluno utilize o sistema? (s/n)");
+            continuar = scanner.nextLine().charAt(0);
+        }
+
+        double mediaNotas = (double) totalAcertosTurma / totalAlunos;
+
+        System.out.println("Maior acerto: " + maiorAcerto);
+        System.out.println("Menor acerto: " + menorAcerto);
+        System.out.println("Total de alunos que utilizaram o sistema: " + totalAlunos);
+        System.out.println("Média das notas da turma: " + mediaNotas);
+
+        scanner.close();
+    }
+}
