@@ -1,0 +1,44 @@
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int totalVotos = 0;
+        int[] votos = new int[5]; // Índice 0 será ignorado para facilitar a correspondência entre código e candidato
+
+        System.out.println("Códigos dos candidatos:");
+        System.out.println("1 - Candidato 1");
+        System.out.println("2 - Candidato 2");
+        System.out.println("3 - Candidato 3");
+        System.out.println("4 - Candidato 4");
+        System.out.println("0 - Encerrar votação");
+
+        while (true) {
+            System.out.println("Digite o código do candidato (ou 0 para encerrar a votação): ");
+            int codigo = scanner.nextInt();
+
+            if (codigo == 0) {
+                break;
+            }
+
+            if (codigo < 1 || codigo > 4) {
+                System.out.println("Código inválido!");
+                continue;
+            }
+
+            votos[codigo]++;
+            totalVotos++;
+        }
+
+        System.out.println("Resultado da votação:");
+        for (int i = 1; i <= 4; i++) {
+            System.out.println("Candidato " + i + ": " + votos[i] + " votos");
+        }
+        System.out.println("Total de votos: " + totalVotos);
+
+        scanner.close();
+    }
+}
+```
