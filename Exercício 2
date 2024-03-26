@@ -3,16 +3,11 @@ import java.util.Scanner;
 public class primeirojava {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Solicitar nome de usuário
         System.out.println("Digite o nome de usuário: ");
         String username = scanner.nextLine();
-
-        // Solicitar senha
         System.out.println("Digite a senha: ");
         String password = scanner.nextLine();
 
-        // Verificar se a senha é igual ao nome de usuário
         while (password.equals(username)) {
             System.out.println("Erro: A senha não pode ser igual ao nome de usuário.");
             System.out.println("Digite a senha novamente: ");
